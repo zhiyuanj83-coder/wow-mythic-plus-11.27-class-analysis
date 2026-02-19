@@ -2,38 +2,37 @@
 ### 《魔兽世界》11.27 版本普通玩家大秘境职业强度分析
 
 Data analysis of Mythic+ class performance for average players (keys 7–14) in WoW patch 11.27 using Warcraft Logs data.
+本项目基于 Warcraft Logs 的真实战斗数据，分析 11.27 版本中普通玩家（7–14 层）的职业表现。
 
 ---
 
 ## 1. Project Overview / 项目概述
 This project analyzes class and specialization performance in World of Warcraft Mythic+ dungeons for **average players**, focusing on keystone levels **7–14** in patch **11.27**.
-Using data from **Warcraft Logs (WCL)**, the goal is to evaluate real-world class strength under controlled difficulty and item level conditions, rather than top-end or speedrun performance.
+Using data from **Warcraft Logs (WCL)**, the goal is to evaluate real-world class strength under controlled difficulty and item level conditions.
 
-本项目基于 **Warcraft Logs（WCL）** 的真实战斗日志数据，分析《魔兽世界》11.27 版本中 **普通玩家** 在 **大秘境 7–14 层** 区间内，不同职业与专精在不同装等条件下的实际表现。
-项目关注的是真实游戏环境中的职业强度，而非极端高端玩家或竞速环境下的表现。
+本项目基于 **Warcraft Logs (WCL)** 的真实战斗日志数据，分析《魔兽世界》11.27 版本中 **普通玩家** 在 **大秘境 7–14 层** 区间内的实际表现。
+项目的核心目标是在控制难度与装等变量的前提下，评估各职业专精的真实强度。
 
 ---
 
 ## 2. Motivation / 项目动机
-Most class balance discussions are based on top percentile players or extreme keystone levels. However, the majority of players participate in mid-range Mythic+ content.
-This project aims to answer:
+Most class balance discussions are based on top percentile players. However, the majority of players participate in mid-range Mythic+ content. This project aims to answer:
 * How do different classes perform for **average players**?
-* How much of class performance is driven by **item level** rather than class mechanics?
-* Which classes provide **stable and consistent performance** in mid-range keys?
+* How much of class performance is driven by **item level**?
+* Which classes provide **stable and consistent performance**?
 
-本项目希望回答以下问题：
-* 在普通玩家群体中，不同职业的实际表现差异有多大？
-* 职业强度在多大程度上受 **装等** 影响，而非职业机制本身？
-* 哪些职业在中等层数大秘境中表现 **稳定且可靠**？
+大多数平衡性讨论都基于顶级玩家，但绝大多数玩家活跃在中层大秘境。本项目旨在回答：
+* 不同职业在普通玩家手中的表现如何？
+* 职业表现受 **装等** 的影响程度有多大？
+* 哪些职业在中层大秘境中表现得最为 **稳定可靠**？
 
 ---
 
 ## 3. Scope & Metrics / 范围与指标
-* **Game Mode**: Mythic+ Dungeons (7–14 Keys)
-* **Player Segment**: Average (non-elite) players
-* **Patch**: 11.27
-* **Data Source**: Warcraft Logs (WCL)
-* **Key Metrics**: Overall DPS, Score distribution, Popularity (Sample size $n$), and Stability.
+* **Game Mode / 模式**: Mythic+ Dungeons (7–14 Keys)
+* **Patch / 版本**: 11.27
+* **Data Source / 数据源**: Warcraft Logs (WCL)
+* **Key Metrics / 核心指标**: Overall DPS, Score distribution, and Popularity (Sample size $n$).
 
 ---
 
@@ -42,22 +41,27 @@ This project aims to answer:
 ### 4.1 Role-Specific Analysis / 职责深度剖析
 
 * **DPS: Frost DK Dominance & The Fire Mage Paradox / 输出赛道：冰DK的统治力与火法悖论**
-    * **Frost Death Knight**: The "numerical gold standard" of 11.27, showing high mean scores and a massive sample size ($n=444$).
-    * **Fire Mage**: A significant finding where a low-popularity spec maintains high-tier scores. This suggests **"Survivor Bias"**—it is primarily played by high-proficiency specialists in this bracket.
-    * **Shadow Priest**: Despite its high community interest, performance is highly sensitive to affixes, placing it in a stable median tier.
+    * **Frost Death Knight**: The "numerical gold standard" of 11.27, showing high mean scores and massive popularity ($n=444$).
+    * **Fire Mage**: A significant finding where a low-popularity spec maintains high-tier scores. This suggests **"Survivor Bias"**—it is primarily played by specialists.
+    * **Shadow Priest**: High community interest, but performance is highly sensitive to dungeon affixes.
+
+    * **冰DK**: 11.27 版本的数值标杆，拥有极高的平均分和庞大的样本量 ($n=444$)。
+    * **火法**: 一个意外发现，虽然人气较低但评分极高。这暗示了 **“幸存者偏差”**——目前该专精主要由高熟练度的绝活玩家在使用。
+    * **暗牧**: 玩家基数大，但表现受词缀影响波动显著。
 
 * **Tank: Popularity vs. Fragility / 坦克赛道：流行度与“脆度”的博弈**
-    * **Protection Warrior**: Remains the most reliable choice for average players due to robust physical mitigation and straightforward utility.
-    * **Protection Paladin**: Exhibits **"deceptive popularity"** ($n=338$). While utility is high, it is significantly **"squishier"** than Warriors in 11.27, requiring much higher player proficiency to manage survival.
-    * **Brewmaster Monk**: Maintains a stable but niche position with competitive scores.
+    * **Protection Warrior**: Remains the most reliable choice for average players due to robust physical mitigation.
+    * **Protection Paladin**: Exhibits **"deceptive popularity"** ($n=338$). It is significantly **"squishier"** than Warriors, requiring higher player proficiency.
+
+    * **防战**: 凭借扎实的物理减伤，依然是普通玩家最可靠的选择。
+    * **防骑**: 呈现出 **“虚假的人气繁荣”** ($n=338$)。虽然功能性强，但实际硬度明显弱于战士，对玩家操作水平要求更高。
 
 * **Healer: The Shaman Monopoly / 治疗赛道：奶萨的断层垄断**
-    * **Restoration Shaman**: Dominates the bracket with nearly 40% popularity while staying in the top performance tier.
-    * **Preservation Evoker**: The "hidden gem" for climbing. It shows the highest ceiling in scores but suffers from a steep learning curve among average players.
+    * **Restoration Shaman**: Dominates with nearly 40% popularity while staying in the top performance tier.
+    * **Preservation Evoker**: The "hidden gem" with the highest ceiling but a steep learning curve.
 
-### 4.2 Statistical Observations / 统计学总结
-* **Meta Efficiency**: Scatter plot analysis reveals a clear gap between **"Community Meta"** (high popularity) and **"Data Meta"** (high performance).
-* **Hero Talent Impact**: Preliminary results suggest that 11.27's hierarchy is heavily dictated by **Hero Talent** synergy with specific dungeon mechanics than base class tuning.
+    * **奶萨**: 统治级表现，出场率接近 40% 且评分稳居第一梯队。
+    * **奶龙**: “上分利器”，拥有极高的上限，但由于上手门槛高，在大众群体中普及率较低。
 
 ---
 
@@ -72,18 +76,6 @@ This project aims to answer:
 │   └── healer_ranking.png  # Healer tier distribution
 ├── notebooks/
 │   ├── 02_data_cleaning.ipynb # Data preprocessing logic
-│   └── 03_analysis.ipynb      # Main visualization & statistical logic
+│   └── 03_analysis.ipynb      # Main visualization logic
 └── README.md
 
----
-
-## 6. Analysis Pipeline / 分析流程
-1. **Data collection**: Extracting raw battle logs via Warcraft Logs API.
-2. **Data cleaning**: Stratifying data by item level and filtering for keystone levels 7–14.
-3. **Role Sharding**: Segregating data into DPS, Tank, and Healer subsets to ensure intra-role fairness.
-4. **Visualization**: Generating distribution plots and popularity-score quadrants to identify Meta outliers.
-
-1. **数据采集**：通过 Warcraft Logs API 提取原始战斗日志。
-2. **数据清洗**：按装等分层并筛选 7–14 层核心数据。
-3. **职责分流**：将数据切分为输出、坦克、治疗子集，确保职责内部对比的公平性。
-4. **可视化分析**：生成表现分布图与流行度-评分象限图，识别版本强势与异常职业。
