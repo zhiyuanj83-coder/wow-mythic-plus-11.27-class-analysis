@@ -74,3 +74,17 @@ This project aims to answer:
 │   ├── 02_data_cleaning.ipynb # Data preprocessing logic
 │   └── 03_analysis.ipynb      # Main visualization & statistical logic
 └── README.md
+
+
+---
+
+## 6. Analysis Pipeline / 分析流程
+1. **Data collection**: Extracting raw battle logs via Warcraft Logs API.
+2. **Data cleaning**: Stratifying data by item level and filtering for keystone levels 7–14.
+3. **Role Sharding**: Segregating data into DPS, Tank, and Healer subsets to ensure intra-role fairness.
+4. **Visualization**: Generating distribution plots and popularity-score quadrants to identify Meta outliers.
+
+1. **数据采集**：通过 Warcraft Logs API 提取原始战斗日志。
+2. **数据清洗**：按装等分层并筛选 7–14 层核心数据。
+3. **职责分流**：将数据切分为输出、坦克、治疗子集，确保职责内部对比的公平性。
+4. **可视化分析**：生成表现分布图与流行度-评分象限图，识别版本强势与异常职业。
